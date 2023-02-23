@@ -53,12 +53,10 @@ server.use(getLog);
 
 //3- Routing örneği
 server.get("/", (req, res) => {
-  res
-    .status(200)
-    .json({
-      statusCode: 200,
-      message: process.env.MESSAGE || "Hey, server is up and running...",
-    });
+  res.status(200).json({
+    statusCode: 200,
+    message: process.env.MESSAGE || "Hey, server is up and running...",
+  });
 });
 
 /*
@@ -105,6 +103,6 @@ server.use((err, req, res, next) => {
 const port = process.env.PORT || 9000;
 
 //2- Server setup
-server.listen(9000, () => {
+server.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
